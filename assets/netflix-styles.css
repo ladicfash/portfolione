@@ -1,0 +1,32 @@
+.Netflix {
+  display: flex;
+  flex-direction: column;
+  background-color: #141414;
+  color: white;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+}
+
+.Netflix header {
+  background-color: #e50914;
+  padding: 20px;
+  text-align: center;
+}
+
+.Netflix .content {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.Netflix .content .card {
+  background-color: #333;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.Netflix .content .card:hover {
+  transform: scale(1.05);
+}
