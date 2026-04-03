@@ -1,21 +1,261 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="assets/styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Oladipupo “Ladi” Fashogbon — Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-    </header>
-    <main>
-        <img src="assets/images/myphoto.jpg" alt="My Photo">
-        <p>This is my portfolio showcasing my work.</p>
+  <div class="app">
+    <!-- Left navigation -->
+    <nav class="nav" aria-label="Primary">
+      <button class="nav-icon" title="Home" aria-label="Home">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3 10.5L12 4l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10.5z" fill="currentColor"/>
+        </svg>
+      </button>
+      <button class="nav-icon" title="Search" aria-label="Search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.6" fill="none"/>
+        </svg>
+      </button>
+      <button class="nav-icon" title="My List" aria-label="My List">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button class="nav-icon" title="Settings" aria-label="Settings">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" stroke="currentColor" stroke-width="1.4" fill="none"/>
+          <path d="M19.4 15a7.9 7.9 0 0 0 .1-1 7.9 7.9 0 0 0-.1-1l2.1-1.6-2-3.4-2.5.6a8 8 0 0 0-1.7-1l-.4-2.6H9.6l-.4 2.6a8 8 0 0 0-1.7 1L4.9 7.9 2.9 11.3 5 12.9a7.9 7.9 0 0 0 0 2l-2.1 1.6 2 3.4 2.5-.6a8 8 0 0 0 1.7 1l.4 2.6h4.8l.4-2.6a8 8 0 0 0 1.7-1l2.5.6 2-3.4-2.1-1.6z" stroke="currentColor" stroke-width="1.2" fill="none"/>
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Main content -->
+    <main class="main" id="main">
+      <!-- Hero -->
+      <header class="hero" role="banner" aria-label="Featured">
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-inner container">
+          <div class="hero-left">
+            <h1 class="name">ELOS — Emotional Labor OS</h1>
+            <p class="tagline">Detects rising tension before conversations happen; privacy‑first behavioral sensing.</p>
+
+            <div class="badges" aria-hidden="true">
+              <div class="badge"><strong>Concept</strong> <span class="score">Product • Research</span></div>
+              <div class="badge"><strong>Stat</strong> <span class="score">23% workday emotional labor</span></div>
+            </div>
+
+            <div class="hero-ctas">
+              <button class="btn play" data-feature="elos" aria-haspopup="dialog">Play</button>
+              <button class="btn trailer" data-feature="elos-trailer">Watch Trailer</button>
+            </div>
+
+            <div class="meta" style="margin-top:12px">
+              <span class="meta-pill">Product Concept</span>
+              <span class="meta-pill">Research</span>
+              <span class="meta-pill">Systems</span>
+            </div>
+          </div>
+
+          <div class="hero-right">
+            <div class="hero-poster" aria-hidden="true">
+              <!-- Replace with your preferred hero poster -->
+              <img src="assets/elos-poster.jpg" alt="ELOS poster" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Research Originals -->
+      <section class="row" id="research" aria-labelledby="research-title">
+        <div class="row-header container">
+          <div>
+            <h2 id="research-title" class="row-title">Research Originals</h2>
+            <p class="row-sub">Case studies and policy research</p>
+          </div>
+        </div>
+
+        <div class="carousel container" data-row="research" tabindex="0" aria-label="Research carousel">
+          <article class="card" data-id="ds267" tabindex="0" role="button" aria-pressed="false">
+            <div class="card-media">
+              <img src="assets/ds267-poster.jpg" alt="Brazil–U.S. Cotton Dispute poster" loading="lazy" />
+            </div>
+            <div class="card-meta">
+              <h3>Brazil–U.S. Cotton Dispute (DS267)</h3>
+              <p>Political economy • 2002–2014</p>
+            </div>
+          </article>
+
+          <article class="card" data-id="ds266" tabindex="0" role="button" aria-pressed="false">
+            <div class="card-media">
+              <img src="assets/ds266-poster.jpg" alt="Brazil Sugar Dispute poster" loading="lazy" />
+            </div>
+            <div class="card-meta">
+              <h3>Brazil Sugar Dispute (DS266)</h3>
+              <p>Agricultural policy • WTO litigation</p>
+            </div>
+          </article>
+
+          <article class="card" data-id="ds70" tabindex="0" role="button" aria-pressed="false">
+            <div class="card-media">
+              <img src="assets/ds70-poster.jpg" alt="Embraer dispute poster" loading="lazy" />
+            </div>
+            <div class="card-meta">
+              <h3>DS70 — Embraer</h3>
+              <p>Industrial policy • Economic sovereignty</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Product Originals -->
+      <section class="row" id="product" aria-labelledby="product-title">
+        <div class="row-header container">
+          <div>
+            <h2 id="product-title" class="row-title">Product Originals</h2>
+            <p class="row-sub">Concept decks, pricing, and GTM</p>
+          </div>
+        </div>
+
+        <div class="carousel container" data-row="product" tabindex="0" aria-label="Product carousel">
+          <article class="card featured" data-id="elos" tabindex="0" role="button" aria-pressed="false">
+            <div class="card-media">
+              <img src="assets/elos-poster.jpg" alt="ELOS poster" loading="lazy" />
+            </div>
+            <div class="card-meta">
+              <h3>ELOS Emotional Labor OS</h3>
+              <p>Real‑time behavioral sensing • Privacy by design</p>
+            </div>
+          </article>
+
+          <article class="card" data-id="elos-cost" tabindex="0" role="button" aria-pressed="false">
+            <div class="card-media">
+              <img src="assets/elos-pricing.jpg" alt="ELOS pricing poster" loading="lazy" />
+            </div>
+            <div class="card-meta">
+              <h3>ELOS Pricing & Positioning</h3>
+              <p>Starter $12 • Growth $18 • Enterprise custom</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Tech Specials -->
+      <section class="row" id="tech" aria-labelledby="tech-title">
+        <div class="row-header container">
+          <div>
+            <h2 id="tech-title" class="row-title">Tech Specials</h2>
+            <p class="row-sub">SQL, systems, and engineering notes</p>
+          </div>
+        </div>
+
+        <div class="carousel container" data-row="tech" tabindex="0" aria-label="Tech carousel">
+          <article class="card" data-id="sql" tabindex="0" role="button" aria-pressed="false">
+            <div class="card-media">
+              <img src="assets/sql-poster.jpg" alt="SQL cheat sheet poster" loading="lazy" />
+            </div>
+            <div class="card-meta">
+              <h3>SQL Cheat Sheet</h3>
+              <p>INNER JOIN • Window Functions • Indexes</p>
+            </div>
+          </article>
+
+          <article class="card" data-id="stored-proc" tabindex="0" role="button" aria-pressed="false">
+            <div class="card-media">
+              <img src="assets/sql-procs.jpg" alt="Stored procedures poster" loading="lazy" />
+            </div>
+            <div class="card-meta">
+              <h3>Stored Procedures & Views</h3>
+              <p>Reusable logic • Performance tips</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Certifications & Workflows -->
+      <section class="row" id="certs" aria-labelledby="certs-title">
+        <div class="row-header container">
+          <div>
+            <h2 id="certs-title" class="row-title">Certifications & Workflows</h2>
+            <p class="row-sub">Professional credentials and process design</p>
+          </div>
+        </div>
+
+        <div class="carousel container" data-row="certs" tabindex="0" aria-label="Certifications carousel">
+          <article class="card" data-id="servicenow" tabindex="0" role="button" aria-pressed="false">
+            <div class="card-media">
+              <img src="assets/servicenow-cert.jpg" alt="ServiceNow certificate" loading="lazy" />
+            </div>
+            <div class="card-meta">
+              <h3>ServiceNow IT Leadership</h3>
+              <p>Completed Dec 06, 2024 • 6 hours</p>
+            </div>
+          </article>
+
+          <article class="card" data-id="admissions" tabindex="0" role="button" aria-pressed="false">
+            <div class="card-media">
+              <img src="assets/admissions-flow.jpg" alt="Admissions workflow diagram" loading="lazy" />
+            </div>
+            <div class="card-meta">
+              <h3>Admissions Workflow</h3>
+              <p>Process automation • Decision flow</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="about container" aria-labelledby="about-title">
+        <div class="about-left">
+          <h2 id="about-title">About</h2>
+          <p><strong>Oladipupo “Ladi” Fashogbon</strong> — researcher and systems builder focused on trade policy, product strategy, and data engineering. Work spans WTO case studies, product concept decks, and technical documentation.</p>
+
+          <ul class="skills" style="margin-top:12px">
+            <li><strong>Research</strong> WTO dispute resolution, political economy</li>
+            <li><strong>Product</strong> Concepting, GTM, pricing</li>
+            <li><strong>Engineering</strong> SQL, data systems, performance</li>
+          </ul>
+
+          <div class="contact" style="margin-top:12px">
+            <a class="btn" href="https://linkedin.com/in/oladipupo-f-3a620213a" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn" href="https://github.com/ladicfash" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn" href="mailto:you@example.com">Email</a>
+          </div>
+        </div>
+
+        <div class="about-right">
+          <!-- Your face photo used as profile image -->
+          <img src="assets/face.jpg" alt="Oladipupo Fashogbon portrait" loading="lazy" />
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner container">
+          <div>© <strong>Oladipupo Fashogbon</strong></div>
+          <div class="footer-links" aria-hidden="true">
+            <a href="#research">Research</a> ·
+            <a href="#product">Products</a> ·
+            <a href="#tech">Tech</a> ·
+            <a href="#certs">Certs</a>
+          </div>
+        </div>
+      </footer>
     </main>
-    <footer>
-        <p>Contact me at: <a href="mailto:me@example.com">me@example.com</a></p>
-    </footer>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" aria-label="Close">×</button>
+      <div id="modal-body" tabindex="-1"></div>
+    </div>
+  </div>
+
+  <script src="app.js" type="module"></script>
 </body>
 </html>
