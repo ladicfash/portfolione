@@ -10,28 +10,10 @@
   <div class="app">
     <!-- Left navigation -->
     <nav class="nav" aria-label="Primary">
-      <button class="nav-icon" title="Home" aria-label="Home">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M3 10.5L12 4l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10.5z" fill="currentColor"/>
-        </svg>
-      </button>
-      <button class="nav-icon" title="Search" aria-label="Search">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.6" fill="none"/>
-        </svg>
-      </button>
-      <button class="nav-icon" title="My List" aria-label="My List">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-      <button class="nav-icon" title="Settings" aria-label="Settings">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" stroke="currentColor" stroke-width="1.4" fill="none"/>
-          <path d="M19.4 15a7.9 7.9 0 0 0 .1-1 7.9 7.9 0 0 0-.1-1l2.1-1.6-2-3.4-2.5.6a8 8 0 0 0-1.7-1l-.4-2.6H9.6l-.4 2.6a8 8 0 0 0-1.7 1L4.9 7.9 2.9 11.3 5 12.9a7.9 7.9 0 0 0 0 2l-2.1 1.6 2 3.4 2.5-.6a8 8 0 0 0 1.7 1l.4 2.6h4.8l.4-2.6a8 8 0 0 0 1.7-1l2.5.6 2-3.4-2.1-1.6z" stroke="currentColor" stroke-width="1.2" fill="none"/>
-        </svg>
-      </button>
+      <button class="nav-icon" title="Home" aria-label="Home">Home</button>
+      <button class="nav-icon" title="Search" aria-label="Search">Search</button>
+      <button class="nav-icon" title="My List" aria-label="My List">List</button>
+      <button class="nav-icon" title="Settings" aria-label="Settings">Settings</button>
     </nav>
 
     <!-- Main content -->
@@ -63,7 +45,6 @@
 
           <div class="hero-right">
             <div class="hero-poster" aria-hidden="true">
-              <!-- Replace with your preferred hero poster -->
               <img src="assets/elos-poster.jpg" alt="ELOS poster" loading="lazy" />
             </div>
           </div>
@@ -76,6 +57,12 @@
           <div>
             <h2 id="research-title" class="row-title">Research Originals</h2>
             <p class="row-sub">Case studies and policy research</p>
+          </div>
+
+          <!-- Quick links to repository PDFs (root-level files) -->
+          <div class="row-links" style="display:flex;gap:10px;align-items:center">
+            <a class="btn" href="CURO symposium:SPIA Colloquim presentation .pdf" download>Download CURO PDF</a>
+            <a class="btn" href="ELOS Big4 v4.pptx" download>Download ELOS PPTX</a>
           </div>
         </div>
 
@@ -151,6 +138,11 @@
             <h2 id="tech-title" class="row-title">Tech Specials</h2>
             <p class="row-sub">SQL, systems, and engineering notes</p>
           </div>
+
+          <!-- Quick link to SQL PDF (root-level file) -->
+          <div style="display:flex;gap:10px;align-items:center">
+            <a class="btn" href="sqladvancedcheatsheet_ladi.pdf" download>Download SQL Cheat Sheet</a>
+          </div>
         </div>
 
         <div class="carousel container" data-row="tech" tabindex="0" aria-label="Tech carousel">
@@ -182,6 +174,12 @@
           <div>
             <h2 id="certs-title" class="row-title">Certifications & Workflows</h2>
             <p class="row-sub">Professional credentials and process design</p>
+          </div>
+
+          <!-- Quick links to certificate and other root-level docs -->
+          <div style="display:flex;gap:10px;align-items:center">
+            <a class="btn" href="document_pdfservicenow.pdf" download>Download ServiceNow PDF</a>
+            <a class="btn" href="ex1_main.pdf" download>Download Admissions Flow PDF</a>
           </div>
         </div>
 
@@ -228,7 +226,6 @@
         </div>
 
         <div class="about-right">
-          <!-- Your face photo used as profile image -->
           <img src="assets/face.jpg" alt="Oladipupo Fashogbon portrait" loading="lazy" />
         </div>
       </section>
@@ -256,6 +253,7 @@
     </div>
   </div>
 
-  <script src="app.js" type="module"></script>
+  <!-- Note: app.js has been moved into assets/ per your repo structure -->
+  <script src="assets/app.js" type="module"></script>
 </body>
 </html>
