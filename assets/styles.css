@@ -1,4 +1,5 @@
 
+
 :root{
   --bg:#050506;
   --panel:#0b0b0c;
@@ -6,19 +7,17 @@
   --muted:#9ea6ad;
   --accent:#e50914;
   --glass:rgba(255,255,255,0.03);
-  --glass-2:rgba(255,255,255,0.02);
-  --max-width:1280px;
+  --max-width:1400px;
   --gap:20px;
   --radius:12px;
-  --shadow-lg:0 30px 80px rgba(0,0,0,0.7);
-  --shadow-sm:0 10px 30px rgba(0,0,0,0.5);
-  --transition:220ms cubic-bezier(.2,.9,.3,1);
+  --shadow-lg:0 40px 120px rgba(0,0,0,0.75);
+  --shadow-sm:0 12px 36px rgba(0,0,0,0.55);
+  --transition:240ms cubic-bezier(.2,.9,.3,1);
   --ui-font: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
-  --card-aspect: 16/9;
+  --card-aspect: 2/3; /* poster aspect for Netflix look */
 }
 
-/* Reset & base */
+/* Base reset */
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
@@ -29,48 +28,47 @@ body{
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   line-height:1.45;
-  -webkit-text-size-adjust:100%;
 }
 
-/* App layout: left nav + content */
+/* App layout */
 .app{display:grid;grid-template-columns:72px 1fr;min-height:100vh}
 .nav{
   background:linear-gradient(180deg,#060607,#0b0b0c);
-  border-right:1px solid rgba(255,255,255,0.02);
-  padding:18px 8px;display:flex;flex-direction:column;gap:12px;align-items:center;
+  border-right:1px solid rgba(255,255,255,0.03);
+  padding:18px 8px;display:flex;flex-direction:column;gap:14px;align-items:center;
 }
 .nav .nav-icon{
-  width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;
-  color:rgba(255,255,255,0.92);cursor:pointer;background:transparent;border:0;
+  width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,0.95);cursor:pointer;background:transparent;border:0;
   transition:transform var(--transition),background var(--transition);
 }
 .nav .nav-icon:hover{transform:translateY(-6px);background:rgba(255,255,255,0.02)}
-.nav .nav-icon:focus{outline:none;box-shadow:0 0 0 4px rgba(229,9,20,0.12);border-radius:10px}
+.nav .nav-icon:focus{outline:none;box-shadow:0 0 0 4px rgba(229,9,20,0.12);border-radius:12px}
 
 /* Main container */
-.main{overflow:auto;padding:20px 28px;max-width:var(--max-width);margin:0 auto}
+.main{overflow:auto;padding:18px 28px;max-width:var(--max-width);margin:0 auto}
 
-/* Cinematic hero */
+/* Cinematic hero — full width feel */
 .hero{
-  position:relative;display:flex;align-items:flex-end;gap:28px;padding:28px;border-radius:14px;
+  position:relative;margin-bottom:28px;border-radius:14px;overflow:hidden;
   background:linear-gradient(180deg,rgba(0,0,0,0.25),rgba(0,0,0,0.6));
-  box-shadow:var(--shadow-sm);overflow:hidden;margin-bottom:18px;
+  box-shadow:var(--shadow-sm);
+  display:flex;align-items:center;padding:36px;
 }
-.hero::after{
-  content:"";position:absolute;right:0;top:0;bottom:0;width:18%;background:linear-gradient(90deg,transparent,rgba(0,0,0,0.6));
-  pointer-events:none;
+.hero::before{
+  content:"";position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(0,0,0,0.6),transparent 35%);pointer-events:none;
 }
 .hero-inner{display:flex;gap:28px;align-items:center;width:100%}
-.hero-left{flex:1;min-width:0}
-.hero-right{flex:0 0 420px;max-width:420px}
-.hero-poster{width:100%;height:260px;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-lg);display:block}
+.hero-left{flex:1;min-width:0;padding-right:12px}
+.hero-right{flex:0 0 520px;max-width:520px}
+.hero-poster{width:100%;height:320px;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-lg)}
 .hero-poster img{width:100%;height:100%;object-fit:cover;display:block;transition:transform var(--transition)}
 .hero-poster:hover img{transform:scale(1.03)}
 
-/* Hero text */
-.name{font-size:clamp(30px,4.6vw,56px);margin:0 0 8px;letter-spacing:-0.02em}
-.tagline{color:var(--muted);margin:0 0 14px;font-size:15px}
-.badges{display:flex;gap:10px;align-items:center;margin-bottom:14px}
+/* Hero typography */
+.name{font-size:clamp(34px,5vw,64px);margin:0 0 8px;letter-spacing:-0.02em}
+.tagline{color:var(--muted);margin:0 0 16px;font-size:16px}
+.badges{display:flex;gap:10px;align-items:center;margin-bottom:16px}
 .badge{background:rgba(255,255,255,0.03);padding:8px 12px;border-radius:999px;color:var(--muted);font-weight:700;font-size:13px}
 .badge .score{color:#fff;margin-left:6px;font-weight:800}
 
@@ -78,21 +76,21 @@ body{
 .hero-ctas{display:flex;gap:12px}
 .btn{
   display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);
-  background:transparent;color:#fff;font-weight:700;cursor:pointer;text-decoration:none;transition:transform var(--transition),box-shadow var(--transition);
+  background:transparent;color:#fff;font-weight:800;cursor:pointer;text-decoration:none;transition:transform var(--transition),box-shadow var(--transition);
 }
-.btn.play{background:linear-gradient(90deg,var(--accent),#ff3b3b);border-color:transparent;box-shadow:0 12px 40px rgba(229,9,20,0.12)}
+.btn.play{background:linear-gradient(90deg,var(--accent),#ff3b3b);border-color:transparent;box-shadow:0 14px 48px rgba(229,9,20,0.12)}
 .btn.trailer{background:transparent;border:1px solid rgba(255,255,255,0.06)}
 .btn:focus{outline:none;box-shadow:0 0 0 4px rgba(229,9,20,0.12)}
 
 /* Row headers */
 .row{margin:28px 0}
-.row-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:10px}
+.row-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:12px}
 .row-title{font-size:18px;margin:0}
 .row-sub{color:var(--muted);margin:0;font-size:13px}
 
-/* Carousel container with edge fade */
+/* Carousel: large posters, Netflix style */
 .carousel{
-  position:relative;display:flex;gap:12px;overflow:auto;padding:12px 6px;scroll-behavior:smooth;
+  position:relative;display:flex;gap:14px;overflow:auto;padding:12px 6px;scroll-behavior:smooth;
   -webkit-overflow-scrolling:touch;
 }
 .carousel::before,.carousel::after{
@@ -103,26 +101,35 @@ body{
 .carousel::-webkit-scrollbar{height:10px}
 .carousel::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.05);border-radius:999px}
 
-/* Card style */
+/* Poster card (taller, Netflix poster ratio) */
 .card{
-  --w:220px;min-width:var(--w);background:linear-gradient(180deg,var(--card),rgba(255,255,255,0.01));
-  border-radius:10px;overflow:hidden;cursor:pointer;flex:0 0 var(--w);box-shadow:var(--shadow-sm);
+  --w:180px;min-width:var(--w);background:transparent;border-radius:8px;overflow:visible;cursor:pointer;flex:0 0 var(--w);
   transition:transform var(--transition),box-shadow var(--transition);
-  display:flex;flex-direction:column;
+  display:flex;flex-direction:column;align-items:flex-start;
 }
 .card:focus-visible{outline:none;box-shadow:0 0 0 4px rgba(229,9,20,0.12)}
-.card:hover{transform:translateY(-10px) scale(1.03);box-shadow:var(--shadow-lg);z-index:40}
-.card-media{width:100%;aspect-ratio:var(--card-aspect);background:#0b0b0b;display:block}
+.card-media{
+  width:100%;aspect-ratio:var(--card-aspect);border-radius:8px;overflow:hidden;background:#0b0b0b;box-shadow:var(--shadow-sm);
+  transition:transform var(--transition),box-shadow var(--transition);
+}
 .card-media img{width:100%;height:100%;object-fit:cover;display:block}
-.card-meta{padding:12px}
-.card-meta h3{margin:0 0 6px;font-size:15px}
-.card-meta p{margin:0;color:var(--muted);font-size:13px}
+.card:hover .card-media{transform:translateY(-10px) scale(1.12);box-shadow:var(--shadow-lg);z-index:60}
+.card-meta{padding:10px 0 0 0;width:100%}
+.card-meta h3{margin:0 0 6px;font-size:14px}
+.card-meta p{margin:0;color:var(--muted);font-size:12px}
 
-/* Featured card variant */
-.card.featured{--w:320px}
+/* Hover preview overlay (optional element inside .card) */
+.card .preview{
+  position:absolute;left:0;top:-8px;width:260px;transform:translateY(-8px);display:none;
+  background:linear-gradient(180deg,#0b0b0b,#0f0f10);border-radius:10px;padding:12px;box-shadow:var(--shadow-lg);z-index:80;
+}
+.card:hover .preview{display:block}
+
+/* Featured card */
+.card.featured{--w:260px}
 .card.featured .card-media{aspect-ratio:16/9}
 
-/* About section */
+/* About */
 .about{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:22px;border-radius:12px;display:flex;gap:20px;align-items:center}
 .about-left{flex:1}
 .about-right{width:260px;flex:0 0 260px}
@@ -134,8 +141,7 @@ body{
 .modal-content{background:linear-gradient(180deg,#0b0b0b,#0f0f10);padding:22px;border-radius:14px;max-width:980px;width:100%;max-height:86vh;overflow:auto;position:relative;box-shadow:var(--shadow-lg)}
 .modal-close{position:absolute;right:14px;top:14px;background:transparent;border:0;color:#fff;font-size:22px;cursor:pointer}
 .modal-content h2{margin:0 0 12px;font-size:20px}
-.modal-content p{color:var(--muted)}
-.modal-actions{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
+blockquote{border-left:3px solid var(--accent);padding-left:12px;color:var(--muted);margin:12px 0}
 
 /* Footer */
 .site-footer{margin-top:36px;padding:18px 0;color:var(--muted);font-size:13px;text-align:center}
@@ -143,10 +149,10 @@ body{
 /* Responsive */
 @media (max-width:1100px){
   .app{grid-template-columns:56px 1fr}
-  .hero-right{flex:0 0 320px;width:320px}
-  .hero-poster{height:220px}
-  .card{--w:200px}
-  .card.featured{--w:280px}
+  .hero-right{flex:0 0 360px;width:360px}
+  .hero-poster{height:260px}
+  .card{--w:160px}
+  .card.featured{--w:220px}
 }
 @media (max-width:720px){
   .app{grid-template-columns:1fr}
@@ -155,18 +161,13 @@ body{
   .hero-inner{flex-direction:column;align-items:flex-start}
   .hero-right{width:100%;order:2}
   .hero-poster{height:180px}
-  .card{--w:150px}
-  .card.featured{--w:220px}
+  .card{--w:140px}
+  .card.featured{--w:200px}
 }
 
-/* Accessibility: reduced motion */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce){
   :root{--transition:0ms}
   .card,.hero-poster{transition:none}
   .carousel{scroll-behavior:auto}
 }
-
-/* Small helpers */
-.kicker{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em}
-.code-inline{font-family:var(--mono);background:rgba(255,255,255,0.02);padding:2px 6px;border-radius:6px;color:#d6d6d6;font-size:13px}
-blockquote{border-left:3px solid var(--accent);padding-left:12px;color:var(--muted);margin:12px 0}
