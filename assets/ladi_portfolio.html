@@ -4,39 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netflix-Style Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        .hero { background: url('hero-bg.jpg') no-repeat center center/cover; height: 100vh; color: white; display: flex; align-items: center; justify-content: center; }
+        .section { padding: 50px; }
+        .featured { display: flex; justify-content: space-around; }
+        .featured div { width: 30%; }
+        .footer { text-align: center; padding: 20px; background-color: #222; color: white; }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>My Netflix-Style Portfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Welcome to my portfolio! I am a passionate web developer with experience in building dynamic websites.</p>
-        </section>
-        <section id="projects">
-            <h2>My Projects</h2>
-            <ul>
-                <li><h3>Project 1</h3><p>A brief description of Project 1.</p></li>
-                <li><h3>Project 2</h3><p>A brief description of Project 2.</p></li>
-                <li><h3>Project 3</h3><p>A brief description of Project 3.</p></li>
-            </ul>
-        </section>
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <p>You can reach me at myemail@example.com</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2026 My Netflix-Style Portfolio</p>
-    </footer>
+    <div class="hero">
+        <h1>Welcome to My Portfolio</h1>
+    </div>
+    <div class="section featured-work">
+        <h2>Featured Work</h2>
+        <div class="featured">
+            <div>
+                <h3>ELOS</h3>
+                <p>Description of ELOS project...</p>
+            </div>
+            <div>
+                <h3>Aflac</h3>
+                <p>Description of Aflac project...</p>
+            </div>
+        </div>
+    </div>
+    <div class="section research">
+        <h2>Research</h2>
+        <p>Details about research work...</p>
+    </div>
+    <div class="section sql-mastery">
+        <h2>SQL Mastery Series</h2>
+        <p>Description of SQL mastery content...</p>
+    </div>
+    <div class="section certifications">
+        <h2>Certifications</h2>
+        <p>Details of certifications...</p>
+    </div>
+    <div class="section about">
+        <h2>About Me</h2>
+        <p>A brief introduction about myself...</p>
+    </div>
+    <div class="section contact">
+        <h2>Contact</h2>
+        <p>My contact details...</p>
+    </div>
+    <div class="footer">
+        <p>&copy; 2026 Your Name. All rights reserved.</p>
+    </div>
 </body>
 </html>
